@@ -1,376 +1,170 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Nivetha G — Portfolio</title>
-
-  <!-- Google fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nivetha G - Portfolio</title>
   <style>
-    :root{
-      --teal:#5d9a98;
-      --light-gray:#e9e9e9;
-      --muted:#7b7b7b;
-      --accent:#2f6f6d;
-      --max-width:1100px;
-      --radius:12px;
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f2f7f9;
+      color: #333;
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      margin:0;
-      background:#f6f6f6;
-      color:#222;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
-      padding:32px 16px;
-      display:flex;
-      justify-content:center;
+    header {
+      background: #3c7d77;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
     }
 
-    .container{
-      width:100%;
-      max-width:var(--max-width);
-      background:white;
-      border-radius:var(--radius);
-      overflow:hidden;
-      box-shadow:0 8px 30px rgba(20,20,20,0.08);
-      display:grid;
-      grid-template-columns: 320px 1fr;
-      min-height:640px;
+    header h1 {
+      margin: 0;
+      font-size: 40px;
+      letter-spacing: 2px;
     }
 
-    /* Left column */
-    .side{
-      background:linear-gradient(180deg, var(--light-gray), #efefef);
-      padding:36px 28px;
-      display:flex;
-      flex-direction:column;
-      gap:28px;
+    header p {
+      margin: 8px 0 0;
+      font-size: 18px;
+      font-style: italic;
     }
 
-    .brand{
-      background:var(--teal);
-      color:white;
-      padding:40px 28px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      gap:6px;
-      border-radius:8px;
-      box-shadow:inset 0 -6px 0 rgba(0,0,0,0.02);
-    }
-    .brand h1{
-      font-family:"Montserrat";
-      font-weight:800;
-      letter-spacing:4px;
-      margin:0;
-      font-size:28px;
-    }
-    .brand .role{
-      font-family:"Playfair Display";
-      font-style:italic;
-      margin:0;
-      opacity:0.95;
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 30px;
     }
 
-    h3.section-title{
-      margin:0 0 8px 0;
-      font-size:14px;
-      letter-spacing:2px;
-      font-weight:700;
-      color:#222;
-    }
-    .profile-list{
-      margin:0;
-      padding-left:18px;
-      color:var(--muted);
-    }
-    .profile-list li{margin:8px 0}
-
-    .contact{
-      font-size:14px;
-      color:var(--muted);
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-    }
-    .contact .line{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-    }
-    .icon{
-      width:18px;height:18px;flex:0 0 18px;opacity:0.9;margin-top:2px;
-    }
-    .address{
-      font-size:13px;line-height:1.4;color:var(--muted)
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
     }
 
-    /* Right column */
-    .main{
-      padding:48px 56px;
+    h2 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: #3c7d77;
+      border-bottom: 2px solid #3c7d77;
+      display: inline-block;
+      padding-bottom: 4px;
     }
 
-    .section{
-      margin-bottom:28px;
+    ul {
+      margin: 0;
+      padding-left: 20px;
     }
 
-    .edu-title{display:flex;align-items:center;gap:10px}
-    .arrow{
-      width:18px;height:18px;background:var(--teal);clip-path:polygon(0 0, 85% 50%, 0 100%);
-      display:inline-block;border-radius:2px;
+    ul li {
+      margin-bottom: 8px;
     }
 
-    h2.section-heading{
-      margin:0 0 12px 0;
-      font-size:16px;
-      letter-spacing:2px;
-      text-transform:uppercase;
-      font-weight:800;
+    .skills span {
+      display: inline-block;
+      background: #e5f3f2;
+      color: #2f5f5b;
+      padding: 6px 12px;
+      margin: 6px 6px 0 0;
+      border-radius: 20px;
+      font-size: 14px;
     }
 
-    .school{
-      font-weight:700;
-      margin:6px 0 6px 0;
-      font-family:"Montserrat";
-    }
-    .muted{
-      color:var(--muted);
-      font-size:15px;
-      margin:0 0 6px 0;
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #3c7d77;
+      color: white;
+      margin-top: 40px;
     }
 
-    ul.bullets{
-      margin:0;
-      padding-left:20px;
-      color:var(--muted);
-    }
-    ul.bullets li{margin:8px 0}
-
-    /* Skills grid and projects */
-    .skills-list{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-    .skill-pill{
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid #e1e1e1;
-      background:#fff;
-      font-size:13px;
-      font-weight:600;
-      color:#333;
-      box-shadow:0 1px 0 rgba(0,0,0,0.02);
-    }
-
-    .projects{
-      display:grid;
-      gap:14px;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      margin-top:10px;
-    }
-    .project{
-      border-radius:10px;
-      padding:14px;
-      background:linear-gradient(180deg,#ffffff,#fbfbfb);
-      border:1px solid #e9e9e9;
-      box-shadow:0 6px 14px rgba(20,20,20,0.03);
-    }
-    .project h4{margin:0 0 6px 0;font-size:15px}
-    .project p{margin:0;color:var(--muted);font-size:13px}
-
-    /* Footer small: download CV button */
-    .actions{
-      margin-top:20px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      border:none;
-      cursor:pointer;
-      padding:10px 14px;
-      border-radius:8px;
-      font-weight:700;
-      font-size:14px;
-      text-decoration:none;
-    }
-    .btn-primary{
-      background:var(--teal);
-      color:white;
-      box-shadow:0 6px 18px rgba(45,100,100,0.12);
-    }
-    .btn-ghost{
-      border:1px solid #ddd;
-      background:white;
-      color:#333;
+    footer p {
+      margin: 0;
+      font-size: 14px;
     }
 
     /* Responsive */
-    @media (max-width:880px){
-      .container{grid-template-columns:1fr;min-height:unset}
-      .side{order:2;padding:22px}
-      .brand{flex-direction:row;justify-content:flex-start;gap:18px;padding:18px;border-radius:6px}
-      .brand h1{font-size:20px;letter-spacing:2px}
-      .main{padding:26px}
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
     }
-
   </style>
 </head>
 <body>
-  <main class="container" role="main" aria-label="Portfolio of Nivetha G">
-    <!-- LEFT COLUMN -->
-    <aside class="side" aria-label="Sidebar with contact and profile">
-      <div class="brand" aria-hidden="false">
-        <div style="text-align:left">
-          <h1>NIVETHA G</h1>
-          <div class="role">Student</div>
+  <header>
+    <h1>NIVETHA G</h1>
+    <p>Computer Science Student</p>
+  </header>
+
+  <div class="container">
+    <!-- Left Column -->
+    <div>
+      <div class="card">
+        <h2>Profile</h2>
+        <p>Computer science student.<br>
+        I consider myself a responsible and orderly person.<br>
+        I am looking forward to my first work experience.</p>
+      </div>
+
+      <div class="card">
+        <h2>Contact</h2>
+        <p><strong>Phone:</strong> +91 7695955612</p>
+        <p><strong>Email:</strong> nivethag24cse@vetias.ac.in</p>
+        <p><strong>Address:</strong><br>
+        74,b/13, West Colony,<br>
+        Komarapalayam, Tamil Nadu 638183.</p>
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div>
+      <div class="card">
+        <h2>Education</h2>
+        <p><strong>Bharathiyar University</strong><br>
+        VET Institute of Arts & Science (Co-education) College<br>
+        Bachelor of Computer Science (2024 - 2027)</p>
+      </div>
+
+      <div class="card">
+        <h2>Languages</h2>
+        <ul>
+          <li>Native Tamil</li>
+          <li>Advanced English</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Skills</h2>
+        <div class="skills">
+          <span>C Programming</span>
+          <span>Python</span>
+          <span>C++</span>
+          <span>Full Stack Basics</span>
+          <span>AI Tools (Basic)</span>
         </div>
       </div>
 
-      <section>
-        <h3 class="section-title">Profile</h3>
-        <ul class="profile-list">
-          <li>Computer science student.</li>
-          <li>I consider myself a responsible and orderly person.</li>
-          <li>I am looking forward to my first work experience.</li>
-        </ul>
-      </section>
-
-      <section>
-        <h3 class="section-title">Contact</h3>
-        <div class="contact" aria-label="Contact information">
-          <div class="line">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 16.5V20a1 1 0 0 1-1 1A19 19 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 .75C8.1 6 9.9 9 13 12.1S18 13.9 20.25 14.5A1 1 0 0 1 21 16.5z" stroke="#333" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <div>+91 7695955612</div>
-          </div>
-
-          <div class="line">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 7.5l9 6 9-6" stroke="#333" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="4" width="18" height="16" rx="2" stroke="#333" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <div>nivethag24cse@vetias.ac.in</div>
-          </div>
-
-          <div class="line">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10c0 6-9 13-9 13S3 16 3 10a9 9 0 1 1 18 0z" stroke="#333" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="#333" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <div class="address">74,b/13, West Colony, Komarapalayam, Tamil Nadu 638183.</div>
-          </div>
-        </div>
-      </section>
-
-      <div style="flex:1"></div>
-
-      <div style="font-size:12px;color:var(--muted);">
-        <div style="margin-bottom:6px;">Download</div>
-        <a class="btn btn-primary" href="#" onclick="event.preventDefault()">Download CV (PDF)</a>
-      </div>
-    </aside>
-
-    <!-- RIGHT COLUMN -->
-    <section class="main" aria-label="Main content">
-      <section class="section" aria-labelledby="education-heading">
-        <div class="edu-title" style="margin-bottom:10px">
-          <span class="arrow" aria-hidden="true"></span>
-          <h2 id="education-heading" class="section-heading">Education</h2>
-        </div>
-        <div>
-          <div class="school">Bharathiyar University</div>
-          <p class="muted">VET Institute of arts & science (co-education) college — School of computing</p>
-          <p class="muted">Bachelor of Computer Science (2024 - 2027)</p>
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="language-heading">
-        <div style="display:flex;align-items:center;gap:10px">
-          <span class="arrow" aria-hidden="true"></span>
-          <h2 id="language-heading" class="section-heading">Language</h2>
-        </div>
-        <ul class="bullets" aria-label="languages spoken">
-          <li>Native Tamil.</li>
-          <li>Advanced English.</li>
-        </ul>
-      </section>
-
-      <section class="section" aria-labelledby="skills-heading">
-        <div style="display:flex;align-items:center;gap:10px">
-          <span class="arrow" aria-hidden="true"></span>
-          <h2 id="skills-heading" class="section-heading">Skills</h2>
-        </div>
-
-        <div style="margin-bottom:10px" class="skills-list" aria-live="polite">
-          <span class="skill-pill">Programming (C)</span>
-          <span class="skill-pill">Python</span>
-          <span class="skill-pill">C++</span>
-          <span class="skill-pill">Full-stack basics</span>
-          <span class="skill-pill">AI tools (basic)</span>
-        </div>
-
-        <div style="margin-top:12px">
-          <h3 style="margin:0 0 6px 0;font-size:14px;font-weight:700">Projects</h3>
-          <div class="projects" role="list">
-            <article class="project" role="listitem">
-              <h4>Simple To-Do App</h4>
-              <p>A small web to-do app built with HTML, CSS and JS to practice DOM manipulation and local storage.</p>
-            </article>
-
-            <article class="project" class="project" role="listitem">
-              <h4>Student Info CLI</h4>
-              <p>Console program in C to manage student records — file I/O, searching, and basic validation.</p>
-            </article>
-
-            <article class="project" role="listitem">
-              <h4>Intro to Python Scripts</h4>
-              <p>Scripting exercises for data parsing and simple automation.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="certs-heading">
-        <div style="display:flex;align-items:center;gap:10px">
-          <span class="arrow" aria-hidden="true"></span>
-          <h2 id="certs-heading" class="section-heading">Certification</h2>
-        </div>
-        <ul class="bullets">
+      <div class="card">
+        <h2>Certifications</h2>
+        <ul>
           <li>Kick start your programming career with C.</li>
           <li>Smart English basics for professionals.</li>
           <li>Artificial Intelligence tools in IT.</li>
         </ul>
-      </section>
+      </div>
+    </div>
+  </div>
 
-      <footer style="margin-top:20px">
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-          <div style="color:var(--muted);font-size:13px">© <strong>Nivetha G</strong> — Student · Bharathiyar University</div>
-          <div class="actions">
-            <a class="btn btn-primary" href="#" onclick="event.preventDefault()">Hire me</a>
-            <a class="btn btn-ghost" href="#" onclick="event.preventDefault()">View GitHub</a>
-          </div>
-        </div>
-      </footer>
-    </section>
-  </main>
-
-  <!-- Small script: enables download CV stub (placeholder) -->
-  <script>
-    // Replace with actual file link or generation in a real project
-    document.querySelectorAll('a[href="#"]').forEach(a=>{
-      a.addEventListener('click', (e)=>{
-        // Prevent default in this demo
-        e.preventDefault();
-        alert('This is a demo portfolio. Replace button actions with real links (CV file, GitHub, contact form) in your project.');
-      });
-    });
-  </script>
+  <footer>
+    <p>© 2025 Nivetha G | Portfolio Website</p>
+  </footer>
 </body>
 </html>
