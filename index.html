@@ -1,170 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nivetha G - Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nivetha G | Portfolio</title>
   <style>
     body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f2f7f9;
+      background: #fdf6f0;
       color: #333;
     }
 
     header {
-      background: #3c7d77;
-      color: white;
+      background: linear-gradient(to right, #f9c5d1, #fbc2eb);
       text-align: center;
-      padding: 50px 20px;
+      padding: 2rem 1rem;
+      border-bottom: 2px solid #e0aaff;
     }
 
     header h1 {
+      font-size: 2.5rem;
       margin: 0;
-      font-size: 40px;
-      letter-spacing: 2px;
+      color: #4b2e83;
     }
 
     header p {
-      margin: 8px 0 0;
-      font-size: 18px;
-      font-style: italic;
+      font-size: 1.2rem;
+      color: #6a4c93;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 30px;
+    .about, .contact {
+      padding: 2rem;
+      background: #fff;
+      margin: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(200, 150, 255, 0.2);
     }
 
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      margin-bottom: 20px;
+    .about h2, .contact h2 {
+      color: #b83b5e;
     }
 
-    h2 {
-      font-size: 20px;
-      margin-bottom: 12px;
-      color: #3c7d77;
-      border-bottom: 2px solid #3c7d77;
-      display: inline-block;
-      padding-bottom: 4px;
+    .info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: 1rem;
+    }
+
+    .column {
+      flex: 1;
+      min-width: 250px;
+      margin: 1rem;
+      background: #fff0f6;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(255, 192, 203, 0.3);
+    }
+
+    .column h3 {
+      color: #ff6f91;
     }
 
     ul {
-      margin: 0;
-      padding-left: 20px;
-    }
-
-    ul li {
-      margin-bottom: 8px;
-    }
-
-    .skills span {
-      display: inline-block;
-      background: #e5f3f2;
-      color: #2f5f5b;
-      padding: 6px 12px;
-      margin: 6px 6px 0 0;
-      border-radius: 20px;
-      font-size: 14px;
+      padding-left: 1.2rem;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      background: #3c7d77;
-      color: white;
-      margin-top: 40px;
-    }
-
-    footer p {
-      margin: 0;
-      font-size: 14px;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
+      padding: 1rem;
+      background: #f9c5d1;
+      color: #4b2e83;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>NIVETHA G</h1>
-    <p>Computer Science Student</p>
+    <h1>Nivetha G</h1>
+    <p>Computer Science Student | Creative Technologist</p>
   </header>
 
-  <div class="container">
-    <!-- Left Column -->
-    <div>
-      <div class="card">
-        <h2>Profile</h2>
-        <p>Computer science student.<br>
-        I consider myself a responsible and orderly person.<br>
-        I am looking forward to my first work experience.</p>
-      </div>
+  <section class="about">
+    <h2>About Me</h2>
+    <p>I’m a responsible and curious learner blending tradition with innovation. I love programming, Tamil poetry, and minimalist design.</p>
+  </section>
 
-      <div class="card">
-        <h2>Contact</h2>
-        <p><strong>Phone:</strong> +91 7695955612</p>
-        <p><strong>Email:</strong> nivethag24cse@vetias.ac.in</p>
-        <p><strong>Address:</strong><br>
-        74,b/13, West Colony,<br>
-        Komarapalayam, Tamil Nadu 638183.</p>
-      </div>
+  <section class="info">
+    <div class="column">
+      <h3>🎓 Education</h3>
+      <p>Bachelor of Computer Science<br>VET Institute of Arts & Science<br>2024–2027</p>
     </div>
-
-    <!-- Right Column -->
-    <div>
-      <div class="card">
-        <h2>Education</h2>
-        <p><strong>Bharathiyar University</strong><br>
-        VET Institute of Arts & Science (Co-education) College<br>
-        Bachelor of Computer Science (2024 - 2027)</p>
-      </div>
-
-      <div class="card">
-        <h2>Languages</h2>
-        <ul>
-          <li>Native Tamil</li>
-          <li>Advanced English</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>Skills</h2>
-        <div class="skills">
-          <span>C Programming</span>
-          <span>Python</span>
-          <span>C++</span>
-          <span>Full Stack Basics</span>
-          <span>AI Tools (Basic)</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>Certifications</h2>
-        <ul>
-          <li>Kick start your programming career with C.</li>
-          <li>Smart English basics for professionals.</li>
-          <li>Artificial Intelligence tools in IT.</li>
-        </ul>
-      </div>
+    <div class="column">
+      <h3>🛠 Skills</h3>
+      <ul>
+        <li>Programming: C, Python, C++</li>
+        <li>Full Stack Development</li>
+        <li>Basic AI Tools</li>
+        <li>Logo & Embroidery Design</li>
+      </ul>
     </div>
-  </div>
+    <div class="column">
+      <h3>📜 Certifications</h3>
+      <ul>
+        <li>Kickstart Programming with C</li>
+        <li>Smart English Basics</li>
+        <li>AI Tools in IT</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Contact Me</h2>
+    <p>📞 +91 7695955612</p>
+    <p>📧 nivethag42ec@vetitas.ac.in</p>
+    <p>📍 Komarapalayam, Tamil Nadu</p>
+  </section>
 
   <footer>
-    <p>© 2025 Nivetha G | Portfolio Website</p>
+    <p>Made with 💐 by Nivetha G</p>
   </footer>
 </body>
 </html>
